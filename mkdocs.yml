@@ -1,0 +1,43 @@
+site_name: ieiao's Wiki
+
+theme:
+  name: material
+  logo: assets/logo.jpeg
+  favicon: assets/favicon.jpeg
+  language: zh
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+nav:
+  - '笔记':
+    - '工具':
+      - 'Linux Tips': 'tools/linux_tips.md'
+      - 'PulseView': 'tools/pulseview.md'
+      - 'hexdump': 'tools/hexdump.md'
+      - 'gcc': 'tools/gcc.md'
+      - 'make': 'tools/make.md'
+    - '嵌入式开发':
+      - '墨水屏': 'ed/epaper/index.md'
+  - '项目':
+    - 'serprog': 'projects/serprog/index.md'
+  - '博客/项目存档': 'ba/index.md'
