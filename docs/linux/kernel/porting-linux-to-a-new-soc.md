@@ -144,7 +144,7 @@ dtb-$(CONFIG_ARCH_FOO) += \
 最后执行编译，如果zImage和dtb都能正确生成的话就可以把当前的.config保存成foo_defconfig了，具体的保存步骤可以从[这里](config.md#savedefconfig)查看。
 
 
-上述修改可以参考[这个提交记录](https://github.com/liweihao-cn/linux-4.19.108/commit/c5fc0821e01cb850855d87f8ce30bc93808110b2)。
+上述修改可以参考[这个提交记录](https://github.com/ieiao/linux-4.19.108/commit/c5fc0821e01cb850855d87f8ce30bc93808110b2)。
 
 ## 3. 实现earlycon驱动
 
@@ -208,7 +208,7 @@ General setup  --->
 	[*] Configure standard kernel features (expert users)  --->
 ```
 
-一切顺利的话这个时候就可以通过串口看到kernel的启动过程了，此部分修改可以参考[这个提交记录](https://github.com/liweihao-cn/linux-4.19.108/commit/28010cf66b2ce602f45e7e2f7080fadee65ce9a3)。
+一切顺利的话这个时候就可以通过串口看到kernel的启动过程了，此部分修改可以参考[这个提交记录](https://github.com/ieiao/linux-4.19.108/commit/28010cf66b2ce602f45e7e2f7080fadee65ce9a3)。
 
 ## 4. 实现irqchip驱动
 
@@ -259,7 +259,7 @@ s3c2440的中断控制器将中断源分为了main和sub两种，要想自己写
 
 实现驱动的过程中可能还会需要维护一些驱动私有的数据结构以便进行一些操作，在这里就维护了一份mic对应的sic的sub_bits数据，以便在mask/unmask的时候做一些判断，这部分参考了三星驱动中的做法。
 
-irqchip的驱动移植到这里就结束了，经过测试mic是可以正常的工作的，而sic还没有测试，后续编写串口驱动的时候便会用到sic了，到时候再看sic能否正常工作。整个移植过程中参考了三星提供的驱动以及一些其他厂商的驱动，多读一读这些代码便可以熟悉驱动编写的流程了，上述改动内容都在[这个提交记录](https://github.com/liweihao-cn/linux-4.19.108/commit/bfd8a4be09689ab85556d9e9f671cc0885ae986d)中。
+irqchip的驱动移植到这里就结束了，经过测试mic是可以正常的工作的，而sic还没有测试，后续编写串口驱动的时候便会用到sic了，到时候再看sic能否正常工作。整个移植过程中参考了三星提供的驱动以及一些其他厂商的驱动，多读一读这些代码便可以熟悉驱动编写的流程了，上述改动内容都在[这个提交记录](https://github.com/ieiao/linux-4.19.108/commit/bfd8a4be09689ab85556d9e9f671cc0885ae986d)中。
 
 ## 5. 实现clk驱动
 
@@ -331,7 +331,7 @@ clk驱动属于电源管理子系统的一部分,主要功能是实现soc内部�
 	};
 ```
 
-具体的代码可以查看[这个提交记录](https://github.com/liweihao-cn/linux-4.19.108/commit/aafe268f9b23700f58fb858e8fdca952e7524040)。
+具体的代码可以查看[这个提交记录](https://github.com/ieiao/linux-4.19.108/commit/aafe268f9b23700f58fb858e8fdca952e7524040)。
 
 这里有一点需要注意，如果某个外设的时钟在注册gate之前是开着的，那么一定要在注册完gate之后通过内核接口使能一下该时钟，代码里的foo_critical_clocks就是起这个作用的，否则可能会在initcall阶段调用clk_disable_unused时导致阻塞，我猜测这里阻塞可能是因为状态不一致导致的，可以通过initcall_debug来调试initcall的执行，可以从[这里](parameters.md#initcall_debug)了解细节。
 
@@ -341,6 +341,6 @@ clk驱动属于电源管理子系统的一部分,主要功能是实现soc内部�
 
 最开始实现驱动的时候我想提高一些精度，于是将定时器的时钟分频到了5M，但实际运行的时候发现启动时候的时间戳出现了很严重的回绕现象，这部分时间戳的打印应该是由sched_clock部分通过我们用sched_clock_register注册的读函数来实现的，但是s3c2440的定时器只有16位，可能是提高定时器频率后溢出太快导致内核还没来得及查询导致的，所以最后还是将定时器时钟频率调节到了1M。
 
-这部分的修改可以查看[这个提交](https://github.com/liweihao-cn/linux-4.19.108/commit/301fb62c3c1852686be590da42d69f9575175ecd)。
+这部分的修改可以查看[这个提交](https://github.com/ieiao/linux-4.19.108/commit/301fb62c3c1852686be590da42d69f9575175ecd)。
 
 ## 7. 实现uart驱动

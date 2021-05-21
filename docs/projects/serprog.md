@@ -60,7 +60,7 @@ sys     0m0.717s
 
 flashrom在使用serprog进行操作时，在sync命令阶段会花费1s的时间，除去sync阶段1s的时间来看读写速度还是不错的，虽然相较于原博主的实现读写速度略有不急，不过这里并未做太多优化，而且日常拿来使用也够用了。
 
-上述实现的代码目前分别托管于[github](https://github.com/liweihao-cn/serprog-lpc54114-lite)以及[gitee](https://gitee.com/liweihao_cn/serprog-lpc54114-lite)。
+上述实现的代码目前分别托管于[github](https://github.com/ieiao/serprog-lpc54114-lite)以及[gitee](https://gitee.com/ieiao/serprog-lpc54114-lite)。
 
 ## stm32-serprog
 
@@ -68,4 +68,4 @@ flashrom在使用serprog进行操作时，在sync命令阶段会花费1s的时�
 
 ![stm32-serprog](/assets/images/projects/serprog/stm32-serprog.jpg)
 
-该项目详细情况可以在[liweihao-cn/stm32-serprog](https://github.com/liweihao-cn/stm32-serprog)中查看。
+该项目详细情况可以在[ieiao/stm32-serprog](https://github.com/ieiao/stm32-serprog)中查看。

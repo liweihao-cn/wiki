@@ -58,4 +58,4 @@ bl固件烧录完成后便可以使用usb线连接电脑了，一切正常的会
 
 ## 仓库
 
-目前上述PCB源文件及固件托管于[github](https://github.com/liweihao-cn/stm32-daplink)和[gitee](https://gitee.com/liweihao_cn/stm32-daplink)，方便国内的朋友访问。
+目前上述PCB源文件及固件托管于[github](https://github.com/ieiao/stm32-daplink)和[gitee](https://gitee.com/ieiao/stm32-daplink)，方便国内的朋友访问。
