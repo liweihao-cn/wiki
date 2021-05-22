@@ -2,7 +2,7 @@
 
 ## 1. 初始化流程
 
-![初始化流程图](../../assets/images/u-boot-init.png)
+![初始化流程图](../assets/images/u-boot-init.png)
 图源见水印
 
 ## 2. 板级配置

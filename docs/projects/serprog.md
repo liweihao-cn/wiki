@@ -66,6 +66,6 @@ flashrom在使用serprog进行操作时，在sync命令阶段会花费1s的时�
 
 为了同时支持3.3V与1.8V spi flash读写的支持，参考[Linux 下离线烧写 SPI 闪存](http://blog.dword1511.info/?p=4107)文章中github仓库中的原理图绘制了一块PCB，并增加了电平转换芯片和切换开关，由于目前恰好有几片stm32f103R8T6，便使用该微控制器作为stm32-serprog的主控，使用一片txs0108来做电平转换（其实这里使用txs0104/txb0104便可以了，不过绘制原理图时未注意到，因此使用了txs0108，v0.2已经做了修改），程序的话可以直接使用原博主仓库中的代码，pcb效果如如下。
 
-![stm32-serprog](/assets/images/projects/serprog/stm32-serprog.jpg)
+![stm32-serprog](../assets/images/projects/serprog/stm32-serprog.jpg)
 
 该项目详细情况可以在[ieiao/stm32-serprog](https://github.com/ieiao/stm32-serprog)中查看。

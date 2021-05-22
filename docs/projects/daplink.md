@@ -20,9 +20,9 @@ DAPLink是一个开源软件项目，可以对ARM Cortex CPU进行编程和调�
 
 > 第二版PCB中的BOOT0启动选择电阻R2和R3只可选其一进行焊接，全部焊接会导致短路！
 
-![DAPLink v0.1](/assets/images/projects/daplink/daplinkv0.1.jpg)
+![DAPLink v0.1](../assets/images/projects/daplink/daplinkv0.1.jpg)
 
-![DAPLink v0.2](/assets/images/projects/daplink/daplinkv0.2.jpg)
+![DAPLink v0.2](../assets/images/projects/daplink/daplinkv0.2.jpg)
 
 ## 固件编译
 
