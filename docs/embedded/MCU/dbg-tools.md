@@ -1,6 +1,6 @@
 # 调试工具
 
-## 1. JLINK
+## JLINK
 
 使用eclipse等IDE时可能会需要使用JLink进行程序烧录，如果使用图形界面的话需要在多个界面之间进行切换，不是很方便，这里可以通过Tools之类的IDE工具通过命令行直接调用JLink从而实现程序下载，具体实现如下。
 
@@ -23,7 +23,7 @@ r g exit 依次是复位、运行然后退出JLink.exe程序
 
 将上面的这几句保存成文件load.jlink，放到工程目录中去，然后使用IDE提供的外部调用工具便能直接将程序烧录至单片机了。
 
-## 2. DAPLINK
+## DAPLINK
 
 CMSIS DAP是ARM推出的开源方案的调试器，目前该项目在Github上已更名为DAPLink，ARM官方推荐的GDB Server是pyocd，也可以使用openocd来作为调试服务器。
 
