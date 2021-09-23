@@ -29,16 +29,16 @@ int32_t utf8_cov_unicode(const char *stream)
                 stream += (length - 1);
                 switch(length) {
                 case 6:
-                        *unicode |= ((*stream--)&0x3f);
+                        *unicode |= (int32_t)((*stream--)&0x3f);
                 case 5:
-                        *unicode |= ((*stream--)&0x3f) << shift_tab[length-5];
+                        *unicode |= (int32_t)((*stream--)&0x3f) << shift_tab[length-5];
                 case 4:
-                        *unicode |= ((*stream--)&0x3f) << shift_tab[length-4];
+                        *unicode |= (int32_t)((*stream--)&0x3f) << shift_tab[length-4];
                 case 3:
-                        *unicode |= ((*stream--)&0x3f) << shift_tab[length-3];
+                        *unicode |= (int32_t)((*stream--)&0x3f) << shift_tab[length-3];
                 case 2:
-                        *unicode |= ((*stream--)&0x3f) << shift_tab[length-2];
-                        *unicode |= (*stream&head_mask[length-1]) << shift_tab[length-1];
+                        *unicode |= (int32_t)((*stream--)&0x3f) << shift_tab[length-2];
+                        *unicode |= (int32_t)(*stream&head_mask[length-1]) << shift_tab[length-1];
                         break;
                 default:
                         *unicode = -1;
