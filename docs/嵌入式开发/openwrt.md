@@ -4,7 +4,7 @@
 
 OpenWrt git仓库地址`git://git.openwrt.org/openwrt/openwrt.git`
 
-> 国内网络环境克隆仓库可能会比较慢，可以使用镜像站点进行克隆，例如`https://gitee.com/harvey520`
+> 可以使用镜像站点加快克隆，例如`https://gitee.com/harvey520`
 
 ## 2. 配置及编译
 

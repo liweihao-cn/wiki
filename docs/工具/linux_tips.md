@@ -82,3 +82,47 @@ $ /etc/exports
 ```shell
 $ sudo mount --bind src dest
 ```
+
+* kvm启动失败,提示`启动域时出错: 所需操作无效：网络 'default' 未激活`
+
+```shell
+$ sudo virsh net-start default
+```
+
+* getopt命令的使用
+
+```shell
+set -- `getopt -q -l append:port: a:p: --append test -p /dev/ttyUSB0
+while [ -n "$1" ]
+do
+	case "$1" in
+	-a | --append)
+		append = $2
+		shift ;;
+	-p | --port)
+		port = $2
+		shift ;;
+	--)
+		shift
+		break;;
+	esac
+	shift
+done
+```
+
+* USB共享网络RNDIS
+
+```shell
+# host
+$ modprobe rndis_hos
+# board
+$ modprobe g_ether.ko
+# on host
+$ ifconfig usb0 192.168.2.1
+# on board
+$ ifconfig usb0 192.168.2.100
+# enable forwarding on host
+$ echo 1 > /proc/sys/net/ipv4/ip_forward
+$ iptables -P FORWARD ACCEPT
+$ iptables -A POSTROUTING -t nat -j MASQUERADE -s 192.168.2.0/24
+```
