@@ -83,6 +83,7 @@ clangd、coc-nvim以及coc-clangd的安装可以查看官方网站的描述，�
 
 ```json
 {
+    "clangd.disableDiagnostics": true,
     "clangd.arguments": [
         "--query-driver",
         "/path/to/toolchain/bin/xxx-gcc",
@@ -91,3 +92,5 @@ clangd、coc-nvim以及coc-clangd的安装可以查看官方网站的描述，�
     ]
 }
 ```
+
+函数自动补全时使用`CTRL+J`和`CTRL+K`可以在函数参数间进行切换。

@@ -126,3 +126,7 @@ $ echo 1 > /proc/sys/net/ipv4/ip_forward
 $ iptables -P FORWARD ACCEPT
 $ iptables -A POSTROUTING -t nat -j MASQUERADE -s 192.168.2.0/24
 ```
+
+* input设备测试工具
+
+`evtest`命令用于测试input设备的输入

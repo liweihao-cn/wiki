@@ -13,6 +13,7 @@
 
 * XC6206
 * ME6216
+* ME6210A33
 
 ## DAC
 
@@ -25,3 +26,7 @@
 ## PHY
 
 * LAN8720 10/100 Base-T/TX Ethernet Transceiver with RMII Interface
+
+## 锂电池充电
+
+TC4056A
