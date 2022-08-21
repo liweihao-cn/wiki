@@ -130,3 +130,12 @@ $ iptables -A POSTROUTING -t nat -j MASQUERADE -s 192.168.2.0/24
 * input设备测试工具
 
 `evtest`命令用于测试input设备的输入
+
+* PRIME Render Offload
+
+双显卡笔记本安装Nvidia闭源驱动后可以通过修改环境变量启用独显加速？
+做法就是在执行程序时添加如下的环境变量，或者直接修改`/usr/share/applications`目录下各程序描述文件中的`Exec`字段，将如下的环境变量添加到命令中。
+
+```shell
+__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia
+```
