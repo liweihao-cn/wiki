@@ -3,7 +3,7 @@ site_name: ieiao's Wiki
 theme:
   name: material
   logo: assets/logo.jpeg
-  favicon: assets/images/favicon.jpeg
+  favicon: assets/favicon.jpeg
   language: zh
 
 markdown_extensions:
@@ -27,3 +27,17 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist
   - pymdownx.tilde
+
+nav:
+  - '笔记':
+    - '工具':
+      - 'Linux Tips': 'tools/linux_tips.md'
+      - 'PulseView': 'tools/pulseview.md'
+      - 'hexdump': 'tools/hexdump.md'
+      - 'gcc': 'tools/gcc.md'
+      - 'make': 'tools/make.md'
+    - '嵌入式开发':
+      - '墨水屏': 'ed/epaper/epaper.md'
+  - '项目':
+    - 'serprog': 'projects/serprog/serprog.md'
+  - '博客/项目存档': 'ba/index.md'
