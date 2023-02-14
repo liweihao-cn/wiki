@@ -20,7 +20,7 @@
 
 ## 启动流程
 
-S905X的启动流程见数据手册中的`18.2`小节，关于启动流程中提到的`recovery`信号，可以通过`Amlogic HDMI Boot Dongle`设备来进行控制，详细的说明可以参考[这里](https://github.com/superna9999/linux/wiki/Amlogic-HDMI-Boot-Dongle)，**本小节后续内容全部来自此处**。
+S905X的启动流程见数据手册中的`18.2`小节，关于启动流程中提到的`recovery`信号，可以通过`Amlogic HDMI Boot Dongle`设备来进行控制，详细的说明可以参考[这里](https://github.com/superna9999/linux/wiki/Amlogic-HDMI-Boot-Dongle)，**本小节后续内容大都来自此处**。
 
 Amlogic BOOTROM在启动过程中会通过HDMI接口中的I2C总线从地址`0x52`，偏移`0xf8(248)`处读取8字节内容，如果这8字节内容是`boot@USB`那么会强制从USB进行启动。相应的，如果内容是`boot@SDC`和`boot@SPI`那么会强制从SD卡和SPI进行启动。
 
@@ -28,17 +28,17 @@ Amlogic BOOTROM在启动过程中会通过HDMI接口中的I2C总线从地址`0x5
 
 ![Amlogic HDMI Boot Dongle](HDMI_Boot_Dongle.png)
 
-Linux平台中通过i2c-dev驱动写数据到eeprom的方法如下：
+以Linux平台、i2c-dev驱动为例指定从SD卡启动，使用如下方法写入eeprom：
 
 ```shell
 $ cd /sys/bus/i2c/devices/i2c-0
 $ echo 24c02 0x52 > new_device
 $ cd *-0052
-$ echo -n "boot@USB" | dd of=eeprom bs=1 seek=248 count=8
+$ echo -n "boot@SDC" | dd of=eeprom bs=1 seek=248
 $ dd if=eeprom bs=1 skip=248 | hexdump
-$ # If the last byte of data not flashed correctly
-$ echo -n "B" | dd of=eeprom bs=1 seek=255 count=1
 ```
+
+> **注意**：从SD卡启动似乎需要使用SDHC规格的SD卡，否则会出现`sd/emmc read data error: ret=16`的错误信息，测试发现确实如此，参考[这里](https://forum.khadas.com/t/bring-the-build-to-libreelec-community/248/58)。
 
 ## 系统烧录
 
@@ -55,9 +55,12 @@ $ echo -n "B" | dd of=eeprom bs=1 seek=255 count=1
 ```shell
 $ dd if=/dev/block/bootloader of=bootloader.dump
 $ dd if=bootloader.dump of=dump.bin bs=512 skip=1
-$ gxlimg -e dump.bin images
-$ gxlimg -t bl3x -c u-boot-dtb.bin u-boot.bin.enc
-$ gxlimg -t fip --bl2 ./bl2.sign --bl30 ./bl30.enc --bl31 ./bl31.enc --bl33 ./u-boot.bin.enc ./gxl-boot.bin
+$ cd gxlimg && mkdir images
+$ ./gxlimg -e ../dump.bin images
+$ ./gxlimg -t bl3x -c u-boot-dtb.bin images/u-boot.bin.enc
+$ ./gxlimg -t fip --bl2 images/bl2.sign --bl30 images/bl30.enc --bl31 images/bl31.enc --bl33 images/u-boot.bin.enc images/gxl-boot.bin
+$ # dd to sd card
+$ dd if=images/gxl-boot.bin of=/dev/sdX bs=512 seek=1
 ```
 
 上述流程的基本原理是使用原有镜像中的BL2x、BL3x等部分配合自行编译出的u-boot，将其组合成一个新的可启动的bootloader，详细原理及介绍可以参考[这里](https://github.com/hexdump0815/u-boot-misc/tree/master/misc.gxl)和[这里](https://github.com/repk/gxlimg)
