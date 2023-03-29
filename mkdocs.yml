@@ -2,6 +2,8 @@ site_name: ieiao's Wiki
 
 theme:
   name: material
+  features:
+    - content.code.copy
   logo: assets/logo.jpeg
   favicon: assets/favicon.jpeg
   language: zh
