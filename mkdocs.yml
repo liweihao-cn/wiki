@@ -44,4 +44,5 @@ nav:
       - 'S905X': 'ed/amlogic/s905x/index.md'
   - '项目':
     - 'serprog': 'projects/serprog/index.md'
+    - 'Epd-Clock': 'projects/epd-clock/index.md'
   - '博客/项目存档': 'ba/index.md'

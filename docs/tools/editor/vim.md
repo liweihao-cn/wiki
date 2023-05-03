@@ -79,11 +79,14 @@ clangd、coc-nvim以及coc-clangd的安装可以查看官方网站的描述，�
 ```json
 {
     "clangd.disableDiagnostics": true,
+    "inlayHint.enable": false,
     "clangd.arguments": [
         "--query-driver",
         "/path/to/toolchain/bin/xxx-gcc",
         "--compile-commands-dir",
-        "build"
+        "build",
+        "--header-insertion",
+        "never"
     ]
 }
 ```

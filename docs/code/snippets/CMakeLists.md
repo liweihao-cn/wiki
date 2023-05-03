@@ -68,6 +68,11 @@ target_link_options(${EXECUTABLE} PRIVATE
     -Xlinker -print-memory-usage -Xlinker
     )
 
+# Linker libraries
+#target_link_libraries(${EXECUTABLE} PRIVATE
+#    m
+#    )
+
 # Optional: Print executable size as part of the post build process
 add_custom_command(TARGET ${EXECUTABLE}
     POST_BUILD
