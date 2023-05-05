@@ -42,6 +42,8 @@ nav:
       - '墨水屏': 'ed/epaper/index.md'
       - '旋转编码器': 'ed/rotary-encoder.md'
       - 'S905X': 'ed/amlogic/s905x/index.md'
+    - '硬件':
+      - '场效应管': 'ed/fet/index.md'
   - '项目':
     - 'serprog': 'projects/serprog/index.md'
     - 'Epd-Clock': 'projects/epd-clock/index.md'
