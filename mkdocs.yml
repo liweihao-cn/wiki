@@ -31,6 +31,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 nav:
+  - '关于': 'index.md'
   - '笔记':
     - '工具':
       - 'Linux Tips': 'tools/linux_tips.md'
@@ -39,12 +40,14 @@ nav:
       - 'gcc': 'tools/gcc.md'
       - 'make': 'tools/make.md'
     - '嵌入式开发':
-      - '墨水屏': 'ed/epaper/index.md'
-      - '旋转编码器': 'ed/rotary-encoder.md'
-      - 'S905X': 'ed/amlogic/s905x/index.md'
+      - 'Linux内核':
+        - 'SOC移植实践': 'embedded-dev/linux/porting-to-new-soc/index.md'
+      - '墨水屏': 'embedded-dev/epaper/index.md'
+      - '旋转编码器': 'embedded-dev/rotary-encoder.md'
+      - 'S905X': 'embedded-dev/amlogic/s905x/index.md'
     - '硬件':
-      - '场效应管': 'ed/fet/index.md'
+      - '场效应管': 'embedded-dev/fet/index.md'
   - '项目':
     - 'serprog': 'projects/serprog/index.md'
     - 'Epd-Clock': 'projects/epd-clock/index.md'
-  - '博客/项目存档': 'ba/index.md'
+  - '博客/项目存档': 'blog-archive/index.md'
