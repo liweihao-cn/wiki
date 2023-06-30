@@ -12,6 +12,8 @@
 ![MINI_M8S_II](MINI_M8S_II_Amlogic_S905X_Board.jpg)
 ![MINI_M8S_II](MINIM8S_II_Board_Large.jpg)
 
+经过测试，前面板led灯是由**GPIODV_24**控制，1点亮，0熄灭。
+
 ## 数据手册
 
 [S905X数据手册](S905X_Datasheet.pdf)

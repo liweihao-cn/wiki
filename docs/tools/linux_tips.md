@@ -5,7 +5,7 @@ Linux系统中的一些小工具、软件配置以及其他一些小玩意儿
 * linux中最简单生成一个uuid的方法
 
 ```shell
-$ cat /proc/sys/kernel/random
+$ cat /proc/sys/kernel/random/uuid
 ```
 
 * 将sd卡/U盘格式化为无分区的样子，其实是覆盖了MBR
@@ -138,4 +138,13 @@ $ iptables -A POSTROUTING -t nat -j MASQUERADE -s 192.168.2.0/24
 
 ```shell
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia
+```
+
+* 挂载img文件的方法
+
+```shell
+$ # 方法1
+$ mount -t iso9660 -o loop xxx.img /media/imgfile
+$ # 方法2
+$ mount -o loop,offset=$((offset*sector_size)) xxx.img /media/imgfile
 ```
