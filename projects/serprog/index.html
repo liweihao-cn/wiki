@@ -9,8 +9,13 @@
       
       
       
+        <link rel="prev" href="../../embedded-dev/fet/">
+      
+      
+        <link rel="next" href="../epd-clock/">
+      
       <link rel="icon" href="../../assets/favicon.jpeg">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.8">
     
     
       
@@ -18,28 +23,30 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
         
-      
-    
-    
-    
-      
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
-
+    
     
     
   </head>
@@ -50,10 +57,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -70,15 +76,18 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../.." title="ieiao&#39;s Wiki" class="md-header__button md-logo" aria-label="ieiao's Wiki" data-md-component="logo">
       
   <img src="../../assets/logo.jpeg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -100,22 +109,21 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -126,7 +134,7 @@
           <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -135,11 +143,14 @@
     
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -153,7 +164,7 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="ieiao&#39;s Wiki" class="md-nav__button md-logo" aria-label="ieiao's Wiki" data-md-component="logo">
       
@@ -191,13 +202,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
-      <label class="md-nav__link" for="__nav_2">
-        笔记
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="笔记" data-md-level="1">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           笔记
@@ -205,6 +221,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -212,13 +229,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
       
-      <label class="md-nav__link" for="__nav_2_1">
-        工具
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="工具" data-md-level="2">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          工具
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           工具
@@ -226,6 +248,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -236,8 +259,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -248,8 +273,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -260,8 +287,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -272,8 +301,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -284,14 +315,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -299,13 +333,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
-      <label class="md-nav__link" for="__nav_2_2">
-        嵌入式开发
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="嵌入式开发" data-md-level="2">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          嵌入式开发
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           嵌入式开发
@@ -313,6 +352,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -320,13 +360,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" >
       
-      <label class="md-nav__link" for="__nav_2_2_1">
-        Linux内核
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Linux内核" data-md-level="3">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+          Linux内核
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_2_1">
           <span class="md-nav__icon md-icon"></span>
           Linux内核
@@ -334,6 +379,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -344,14 +390,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -362,8 +411,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -374,8 +425,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -386,14 +439,31 @@
     </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embedded-dev/rockchip/rk3128/" class="md-nav__link">
+        RK3128
+      </a>
+    </li>
+  
+
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -401,13 +471,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
-      <label class="md-nav__link" for="__nav_2_3">
-        硬件
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="硬件" data-md-level="2">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          硬件
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           硬件
@@ -415,6 +490,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -425,12 +501,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -451,13 +529,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_3">
-        项目
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="项目" data-md-level="1">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          项目
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           项目
@@ -465,6 +548,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
     
@@ -472,7 +556,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -488,6 +572,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
@@ -529,8 +614,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -541,6 +628,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -575,6 +663,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
@@ -617,12 +706,15 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                
-                <h1 id="serprog">serprog<a class="headerlink" href="#serprog" title="Permanent link">&para;</a></h1>
+                  
+
+
+
+<h1 id="serprog">serprog<a class="headerlink" href="#serprog" title="Permanent link">&para;</a></h1>
 <h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>serprog是<a href="http://flashrom.org/">flashrom</a>支持的众多编程器中的一种，可以通过串口操作单片机来给spi flash编程，在flashrom的<a href="https://flashrom.org/Serprog">wiki</a>中介绍了多种平台的实现。</p>
 <p>我最开始是从<a href="http://blog.dword1511.info/?p=4107">Linux 下离线烧写 SPI 闪存</a>这篇博客中了解到这种编程器，对此比较感兴趣，于是仔细阅读了一下原博主的文章和代码仓库，并对serprog的协议进行了研读。</p>
@@ -630,48 +722,48 @@
 <p>接上文，正好有一块lpc54114-lite开发板，该开发板有一片板载spi flash，而且微控制器具有usb设备外设，恰好可以满足要求，于是便在该开发板上进行了简单实现。</p>
 <p>代码编写完成后进行了简单的测试，结果如下：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 读flash, W25X80, 1MiB</span>
-$ <span class="nb">time</span> sudo flashrom -p serprog:dev<span class="o">=</span>/dev/ttyACM0:4000000 -c W25X80 -r /tmp/test.bin
-flashrom  on Linux <span class="m">4</span>.19.0-16-amd64 <span class="o">(</span>x86_64<span class="o">)</span>
-flashrom is free software, get the <span class="nb">source</span> code at https://flashrom.org
+$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>sudo<span class="w"> </span>flashrom<span class="w"> </span>-p<span class="w"> </span>serprog:dev<span class="o">=</span>/dev/ttyACM0:4000000<span class="w"> </span>-c<span class="w"> </span>W25X80<span class="w"> </span>-r<span class="w"> </span>/tmp/test.bin
+flashrom<span class="w">  </span>on<span class="w"> </span>Linux<span class="w"> </span><span class="m">4</span>.19.0-16-amd64<span class="w"> </span><span class="o">(</span>x86_64<span class="o">)</span>
+flashrom<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software,<span class="w"> </span>get<span class="w"> </span>the<span class="w"> </span><span class="nb">source</span><span class="w"> </span>code<span class="w"> </span>at<span class="w"> </span>https://flashrom.org
 
-Using clock_gettime <span class="k">for</span> delay loops <span class="o">(</span>clk_id: <span class="m">1</span>, resolution: 1ns<span class="o">)</span>.
-serprog: Programmer name is <span class="s2">&quot;lpc-serprog&quot;</span>
-Found Winbond flash chip <span class="s2">&quot;W25X80&quot;</span> <span class="o">(</span><span class="m">1024</span> kB, SPI<span class="o">)</span> on serprog.
-Reading flash... <span class="k">done</span>.
+Using<span class="w"> </span>clock_gettime<span class="w"> </span><span class="k">for</span><span class="w"> </span>delay<span class="w"> </span>loops<span class="w"> </span><span class="o">(</span>clk_id:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>resolution:<span class="w"> </span>1ns<span class="o">)</span>.
+serprog:<span class="w"> </span>Programmer<span class="w"> </span>name<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;lpc-serprog&quot;</span>
+Found<span class="w"> </span>Winbond<span class="w"> </span>flash<span class="w"> </span>chip<span class="w"> </span><span class="s2">&quot;W25X80&quot;</span><span class="w"> </span><span class="o">(</span><span class="m">1024</span><span class="w"> </span>kB,<span class="w"> </span>SPI<span class="o">)</span><span class="w"> </span>on<span class="w"> </span>serprog.
+Reading<span class="w"> </span>flash...<span class="w"> </span><span class="k">done</span>.
 
-real    0m3.106s
-user    0m1.163s
-sys     0m0.055s
+real<span class="w">    </span>0m3.106s
+user<span class="w">    </span>0m1.163s
+sys<span class="w">     </span>0m0.055s
 
 <span class="c1"># 擦除flash, W25X80, 1MiB</span>
-$ <span class="nb">time</span> sudo flashrom -p serprog:dev<span class="o">=</span>/dev/ttyACM0:4000000 -c W25X80 -E
-flashrom  on Linux <span class="m">4</span>.19.0-16-amd64 <span class="o">(</span>x86_64<span class="o">)</span>
-flashrom is free software, get the <span class="nb">source</span> code at https://flashrom.org
+$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>sudo<span class="w"> </span>flashrom<span class="w"> </span>-p<span class="w"> </span>serprog:dev<span class="o">=</span>/dev/ttyACM0:4000000<span class="w"> </span>-c<span class="w"> </span>W25X80<span class="w"> </span>-E
+flashrom<span class="w">  </span>on<span class="w"> </span>Linux<span class="w"> </span><span class="m">4</span>.19.0-16-amd64<span class="w"> </span><span class="o">(</span>x86_64<span class="o">)</span>
+flashrom<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software,<span class="w"> </span>get<span class="w"> </span>the<span class="w"> </span><span class="nb">source</span><span class="w"> </span>code<span class="w"> </span>at<span class="w"> </span>https://flashrom.org
 
-Using clock_gettime <span class="k">for</span> delay loops <span class="o">(</span>clk_id: <span class="m">1</span>, resolution: 1ns<span class="o">)</span>.
-serprog: Programmer name is <span class="s2">&quot;lpc-serprog&quot;</span>
-Found Winbond flash chip <span class="s2">&quot;W25X80&quot;</span> <span class="o">(</span><span class="m">1024</span> kB, SPI<span class="o">)</span> on serprog.
-Erasing and writing flash chip... Erase/write <span class="k">done</span>.
+Using<span class="w"> </span>clock_gettime<span class="w"> </span><span class="k">for</span><span class="w"> </span>delay<span class="w"> </span>loops<span class="w"> </span><span class="o">(</span>clk_id:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>resolution:<span class="w"> </span>1ns<span class="o">)</span>.
+serprog:<span class="w"> </span>Programmer<span class="w"> </span>name<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;lpc-serprog&quot;</span>
+Found<span class="w"> </span>Winbond<span class="w"> </span>flash<span class="w"> </span>chip<span class="w"> </span><span class="s2">&quot;W25X80&quot;</span><span class="w"> </span><span class="o">(</span><span class="m">1024</span><span class="w"> </span>kB,<span class="w"> </span>SPI<span class="o">)</span><span class="w"> </span>on<span class="w"> </span>serprog.
+Erasing<span class="w"> </span>and<span class="w"> </span>writing<span class="w"> </span>flash<span class="w"> </span>chip...<span class="w"> </span>Erase/write<span class="w"> </span><span class="k">done</span>.
 
-real    0m25.594s
-user    0m23.017s
-sys     0m0.065s
+real<span class="w">    </span>0m25.594s
+user<span class="w">    </span>0m23.017s
+sys<span class="w">     </span>0m0.065s
 
 <span class="c1"># 写flash, W25X80, 1MiB</span>
-$ <span class="nb">time</span> sudo flashrom -p serprog:dev<span class="o">=</span>/dev/ttyACM0:4000000 -c W25X80 -w /tmp/test.bin 
-flashrom  on Linux <span class="m">4</span>.19.0-16-amd64 <span class="o">(</span>x86_64<span class="o">)</span>
-flashrom is free software, get the <span class="nb">source</span> code at https://flashrom.org
+$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>sudo<span class="w"> </span>flashrom<span class="w"> </span>-p<span class="w"> </span>serprog:dev<span class="o">=</span>/dev/ttyACM0:4000000<span class="w"> </span>-c<span class="w"> </span>W25X80<span class="w"> </span>-w<span class="w"> </span>/tmp/test.bin<span class="w"> </span>
+flashrom<span class="w">  </span>on<span class="w"> </span>Linux<span class="w"> </span><span class="m">4</span>.19.0-16-amd64<span class="w"> </span><span class="o">(</span>x86_64<span class="o">)</span>
+flashrom<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software,<span class="w"> </span>get<span class="w"> </span>the<span class="w"> </span><span class="nb">source</span><span class="w"> </span>code<span class="w"> </span>at<span class="w"> </span>https://flashrom.org
 
-Using clock_gettime <span class="k">for</span> delay loops <span class="o">(</span>clk_id: <span class="m">1</span>, resolution: 1ns<span class="o">)</span>.
-serprog: Programmer name is <span class="s2">&quot;lpc-serprog&quot;</span>
-Found Winbond flash chip <span class="s2">&quot;W25X80&quot;</span> <span class="o">(</span><span class="m">1024</span> kB, SPI<span class="o">)</span> on serprog.
-Reading old flash chip contents... <span class="k">done</span>.
-Erasing and writing flash chip... Erase/write <span class="k">done</span>.
-Verifying flash... VERIFIED.
+Using<span class="w"> </span>clock_gettime<span class="w"> </span><span class="k">for</span><span class="w"> </span>delay<span class="w"> </span>loops<span class="w"> </span><span class="o">(</span>clk_id:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>resolution:<span class="w"> </span>1ns<span class="o">)</span>.
+serprog:<span class="w"> </span>Programmer<span class="w"> </span>name<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;lpc-serprog&quot;</span>
+Found<span class="w"> </span>Winbond<span class="w"> </span>flash<span class="w"> </span>chip<span class="w"> </span><span class="s2">&quot;W25X80&quot;</span><span class="w"> </span><span class="o">(</span><span class="m">1024</span><span class="w"> </span>kB,<span class="w"> </span>SPI<span class="o">)</span><span class="w"> </span>on<span class="w"> </span>serprog.
+Reading<span class="w"> </span>old<span class="w"> </span>flash<span class="w"> </span>chip<span class="w"> </span>contents...<span class="w"> </span><span class="k">done</span>.
+Erasing<span class="w"> </span>and<span class="w"> </span>writing<span class="w"> </span>flash<span class="w"> </span>chip...<span class="w"> </span>Erase/write<span class="w"> </span><span class="k">done</span>.
+Verifying<span class="w"> </span>flash...<span class="w"> </span>VERIFIED.
 
-real    0m17.041s
-user    0m2.757s
-sys     0m0.717s
+real<span class="w">    </span>0m17.041s
+user<span class="w">    </span>0m2.757s
+sys<span class="w">     </span>0m0.717s
 </code></pre></div>
 <p>flashrom在使用serprog进行操作时，在sync命令阶段会花费1s的时间，除去sync阶段1s的时间来看读写速度还是不错的，虽然相较于原博主的实现读写速度略有不急，不过这里并未做太多优化，而且日常拿来使用也够用了。</p>
 <p>上述实现的代码目前分别托管于<a href="https://github.com/ieiao/serprog-lpc54114-lite">github</a>以及<a href="https://gitee.com/ieiao/serprog-lpc54114-lite">gitee</a>。</p>
@@ -679,67 +771,33 @@ sys     0m0.717s
 <p>为了同时支持3.3V与1.8V spi flash读写的支持，参考<a href="http://blog.dword1511.info/?p=4107">Linux 下离线烧写 SPI 闪存</a>文章中github仓库中的原理图绘制了一块PCB，并增加了电平转换芯片和切换开关，由于目前恰好有几片stm32f103R8T6，便使用该微控制器作为stm32-serprog的主控，使用一片txs0108来做电平转换（其实这里使用txs0104/txb0104便可以了，不过绘制原理图时未注意到，因此使用了txs0108，v0.2已经做了修改），程序的话可以直接使用原博主仓库中的代码，pcb效果如如下。</p>
 <p><img alt="stm32-serprog" src="stm32-serprog.jpg" /></p>
 <p>该项目详细情况可以在<a href="https://github.com/ieiao/stm32-serprog">ieiao/stm32-serprog</a>中查看。</p>
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
-        
-<footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../../embedded-dev/fet/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 场效应管" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              场效应管
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../epd-clock/" class="md-footer__link md-footer__link--next" aria-label="下一页: Epd-Clock" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              Epd-Clock
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -749,10 +807,11 @@ sys     0m0.717s
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
       
     
   </body>
