@@ -45,6 +45,7 @@ nav:
       - '墨水屏': 'embedded-dev/epaper/index.md'
       - '旋转编码器': 'embedded-dev/rotary-encoder.md'
       - 'S905X': 'embedded-dev/amlogic/s905x/index.md'
+      - 'RK3128': 'embedded-dev/rockchip/rk3128/index.md'
     - '硬件':
       - '场效应管': 'embedded-dev/fet/index.md'
   - '项目':
