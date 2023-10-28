@@ -783,6 +783,8 @@
 <h3 id="debian">引导内核及Debian系统<a class="headerlink" href="#debian" title="Permanent link">&para;</a></h3>
 <p>在成功截停Uboot后，发现该Uboot提供的命令极少，并没有常见的emmc读取等命令，因此只能借助原有的bootrk命令来引导内核及Debian。</p>
 <p>从线刷包中解出boot.img镜像，随后使用debootstrap命令构建一个最小armhf debian文件系统，并将文件系统制作成ext2文件系统的镜像，修改package-file和parameter文件，主要是对打包文件和mtd分区表进行修改，修改后使用rockchip提供的打包工具重新打包回统一镜像，并进行烧录。如果操作无误的话便可以成功启动到Debian环境了，完整启动log如下</p>
+<details class="note">
+<summary>点击展开</summary>
 <div class="highlight"><pre><span></span><code>U-Boot 2014.10-RK3128-01-01497-g3464f5e (Jun 17 2015 - 20:20:17)
 
 CPU: rk3128
@@ -1493,19 +1495,23 @@ Hardware        : Rockchip RK3128
 Revision        : 0000
 Serial          : 0000000000000000
 </code></pre></div>
+</details>
 <h3 id="_2">高版本内核？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>在启动Debian系统后，尝试使用resize2fs扩展分区，但是提示内核不支持，这里应该是内核版本比较老导致的。</p>
 <p>此外，默认的内核镜像使能了ANDROID_PARANOID_NETWORK编译选项，会导致网络存在一些问题，具体现象见上面的ping命令输出。</p>
 <p>Rockchip在github中提供了高版本的<a href="https://github.com/rockchip-linux/u-boot">U-Boot</a>和<a href="https://github.com/rockchip-linux/kernel">内核</a>源码，此外还有比较完善的Wiki和启动所需的bin文件，因此决定直接使用最新代码编译出可启动的U-Boot及内核镜像。</p>
-<p>通过分析救砖固件中提取出的设备树，拿到了一些外设及IO复用的配置信息，根据这些信息对源码进行了简单修改编译，最终成功使用5.10内核启动了Debian文件系统。U-Boot和内核的修改补丁分别见<a href="https://github.com/ieiao/rockchip-u-boot/commit/8f8d890a5021bbabb3ced622e8bd7ea6e1c2cddf">这里</a>和<a href="https://github.com/ieiao/rockchip-kernel/commit/ca5417963e0d526f8dfc387b4d865bdbf1881bf7">这里</a>，一些修改情况如下：</p>
+<p>通过分析救砖固件中提取出的设备树，拿到了一些外设及IO复用的配置信息，根据这些信息对源码进行了简单修改编译，最终成功使用5.10内核启动了Debian文件系统。U-Boot和内核的修改补丁分别见<a href="https://github.com/ieiao/rockchip-u-boot/commit/8f8d890a5021bbabb3ced622e8bd7ea6e1c2cddf">这里</a>和<a href="https://github.com/ieiao/rockchip-kernel/tree/EC6108V9A">这里</a>，一些修改情况如下：</p>
 <ul>
 <li>调试串口使用UART2，IO复用配置在SDMMC接口D0及D1上，需要使用TF转排针PCB进行连接，这样可以免拆调试</li>
-<li>禁用FIQ调试功能，需要通过menuconfig关闭相应的内核驱动</li>
+<li>禁用FIQ调试功能</li>
 <li>eth采用内部时钟，这部分提取出来的设备树描述有误，但不清楚为何旧内核可以工作</li>
-<li>CPU频率由于PMIC问题无法动态调节，只能通过设备树或者clk debugfs指定其运行频率</li>
+<li>CPU dvfs动态调频可用</li>
+<li>USB Host可用</li>
 <li>rkbin仓库中的rkdeveloptool似乎有点问题，gpt分区时最后一个分区的end lba数值有误，会导致内核识别不到最后一个emmc分区，需要在U-Boot命令行中校正一下</li>
 </ul>
-<p>当然，显示及USB相关功能目前均未进行测试，但是网络可用后便可以用来搭建一些简单的服务了，完整的启动日志如下：</p>
+<p>HDMI及红外等功能目前还没有添加支持，但是网络可用后便可以用来搭建一些简单的服务了，完整的启动日志如下：</p>
+<details class="note">
+<summary>点击展开</summary>
 <div class="highlight"><pre><span></span><code>DDR Version 2.12 20190926
 In
 ID:0x0
@@ -2070,6 +2076,7 @@ Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 debian@debian-20:~$
 </code></pre></div>
+</details>
 
               
             </article>
