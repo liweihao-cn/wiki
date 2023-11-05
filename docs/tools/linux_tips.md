@@ -148,3 +148,7 @@ $ mount -t iso9660 -o loop xxx.img /media/imgfile
 $ # 方法2
 $ mount -o loop,offset=$((offset*sector_size)) xxx.img /media/imgfile
 ```
+
+* 网络发生改变后自动运行命令
+
+可以在`/etc/NetworkManager/dispatcher.d/`目录下添加自定义脚本，这样当网络接口发生变化时NetworkManager便会自动执行这些脚本。例如可以添加一个路由表优先级调整脚本，当未连接wifi时流量从有线网络经过，当wifi网络连接后，自动修改路由表，将流量路由至wifi,这样可以很方便的实现流量路线切换。
